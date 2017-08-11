@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>24 Discourses : {{ asciiQuadripod }}</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{{ quadripodHtml }}} {{ name }}</h1>
+
+    <h2>Universe</h2>
+    <span class="universe"><a href="{{ universeId }}.html">{{{ universeHtml }}}</a></span>
+    {{#universeName}}
+      (<span class="name">{{ universeName }}</span>)
+    {{/universeName}}
+
+    <h2>Transformations</h2>
+    <ul class="transformations">
+      <li>Clockwise, same universe: <a href="{{ clockwise }}.html">{{{ clockwiseHtml }}}</a></li>
+      <li>Anti-clockwise, same universe: <a href="{{ antiClockwise }}.html">{{{ antiClockwiseHtml }}}</a></li>
+      <li>Reverse self: <a href="{{ reverseSelf }}.html">{{{ reverseSelfHtml }}}</a></li>
+      <li>Reverse other: <a href="{{ reverseOther }}.html">{{{ reverseOtherHtml }}}</a></li>
+      <li>Reverse signifiers: <a href="{{ reverseSignifiers }}.html">{{{ reverseSignifiersHtml }}}</a></li>
+      <li>Reverse signifieds: <a href="{{ reverseSignifieds }}.html">{{{ reverseSignifiedsHtml }}}</a></li>
+    </ul>
+  </body>
+</html>

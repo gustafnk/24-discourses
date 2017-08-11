@@ -1,0 +1,23 @@
+{
+  "name": "24-discourses",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustafnk/24-discourses.git"
+  },
+  "author": "Gustaf Nilsson Kotte <gustaf.nk@gmail.com> (https://twitter.com/gustaf_nk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustafnk/24-discourses/issues"
+  },
+  "homepage": "https://github.com/gustafnk/24-discourses#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "mustache": "^2.3.0"
+  }
+}
