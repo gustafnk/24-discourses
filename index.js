@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fsExtra = require('fs-extra');
 const mkdirp = require('mkdirp');
 const Mustache = require('mustache');
 
@@ -92,3 +93,5 @@ instructions.forEach(instruction => {
   console.log(`Writing file ${filePath}`);
   fs.writeFileSync(filePath, instruction.html);
 });
+
+fsExtra.copy('./site/s-s1-s2-a.html', './site/index.html');
