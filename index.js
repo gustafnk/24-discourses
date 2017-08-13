@@ -38,6 +38,11 @@ const sourceData = [
   { id: 's2-s1-s-a', universeId: 's1-s-a-s2' },
 ];
 
+const pairs = {
+  's-s1': 'foo',
+  's1-s2': 'bar',
+}
+
 const htmlTerm = t => {
   const dict = {
     's': 's',
@@ -54,9 +59,18 @@ const prettifyQuadripode = q => {
     `<sup>${htmlTerm(q[2])}</sup>/<sub>${htmlTerm(q[3])}</sub>`;
 };
 
+const getKnownPairs = q => {
+  const pairTokens = [`${q[0]}-${q[1]}`, `${q[2]}-${q[3]}`];
+
+  return pairTokens.map(pair => pairs[pair]).filter(item => item);
+};
+
 const discourses = sourceData.map(discourse => {
   const q = discourse.id.split('-');
   const universeQuadripod = discourse.universeId.split('-');
+
+  const knownPairs = getKnownPairs(q);
+  console.log(knownPairs);
 
   const asciiQuadripod = `${q[1]}/${q[0]} ${q[2]}/${q[3]}`;
 
