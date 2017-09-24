@@ -136,5 +136,5 @@ _.flatten([universeInstructions, discourseInstructions]).forEach(instruction => 
   fs.writeFileSync(instruction.filePath, instruction.html);
 });
 
-fsExtra.copySync('./site/s-s1-s2-a.html', './site/index.html');
 fsExtra.copySync('./static', './site/static');
+fsExtra.copySync('./static/index.html', './site/index.html');

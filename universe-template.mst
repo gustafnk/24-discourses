@@ -35,21 +35,12 @@
         font-size: 2em;
         font-weight: bold;
       }
-
-      .title table, .title h-include {
-        display: inline-block;
-      }
-
-      .title h-include {
-        position: relative;
-        top: -8px;
-        left: 28px;
-      }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="title">{{{ quadripodHtml }}} <h-include src="static/{{ universeId }}-map.html"></h-include></div>
+    <h-include src="static/{{ universeId }}-map.html"></h-include>
+    <div class="title">{{{ quadripodHtml }}}</div>
 
     {{#universeDiscourses}}
       <div>
