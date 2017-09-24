@@ -22,23 +22,39 @@
       ul {
         padding: 0;
       }
+
+      table.quadripod tr td {
+        text-align: center;
+      }
+
+      table.quadripod tr:first-child td {
+        border-bottom: 1pt solid black;
+      }
+
+      .title table.quadripod tr td {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .title table, .title h-include {
+        display: inline-block;
+      }
+
+      .title h-include {
+        position: relative;
+        top: -8px;
+        left: 28px;
+      }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <h1>{{{ quadripodHtml }}}</h1>
-
-    <h-include src="static/{{ universeId }}-map.html"></h-include>
-
-    <ul class="transformations">
-      {{#universeTransformations}}
-        <a href="{{ universe }}.html">{{ direction }}</a>
-      {{/universeTransformations}}
-    </ul>
+    <div class="title">{{{ quadripodHtml }}} <h-include src="static/{{ universeId }}-map.html"></h-include></div>
 
     {{#universeDiscourses}}
       <div>
-      <h2>{{ rotation}}: {{{ quadripodHtml }}}</h2>
+        <h2>{{ rotation }}</h2>
+        {{{ quadripodHtml }}}
       </div>
     {{/universeDiscourses}}
 

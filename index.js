@@ -48,22 +48,11 @@ const rotations = {
   's2': 'University',
 };
 
-// Left, right, up, down
-const universeTransformations = [
-  [2, 3, 4, 5],
-  [6, 1, 4, 5],
-  [1, 6, 4, 5],
-  [2, 3, 6, 1],
-  [2, 3, 1, 6],
-  [2, 3, 5, 4],
-];
-const directions = ['Left', 'Right', 'Up', 'Down'];
-
 const htmlTerm = t => {
   const dict = {
     's': '$',
-    's1': 's<sub>1</sub>',
-    's2': 's<sub>2</sub>',
+    's1': 'S<sub>1</sub>',
+    's2': 'S<sub>2</sub>',
     'a': 'a',
   };
 
@@ -71,8 +60,8 @@ const htmlTerm = t => {
 }
 
 const prettifyQuadripode = q => {
-  return `<sup>${htmlTerm(q[1])}</sup>/<sub>${htmlTerm(q[0])}</sub> ` +
-    `<sup>${htmlTerm(q[2])}</sup>/<sub>${htmlTerm(q[3])}</sub>`;
+  return `<table class="quadripod"><tr><td>${htmlTerm(q[1])}</td><td>${htmlTerm(q[2])}</td></tr>` +
+    `<tr><td>${htmlTerm(q[0])}</td><td>${htmlTerm(q[3])}</td></tr></table>`;
 };
 
 const discourses = sourceData.map((discourse, i) => {
@@ -114,16 +103,8 @@ const universeArray = _.keys(universes);
 const universeInstructions = universeArray.map((universeId, universeIndex) => {
   const universeDiscourses = universes[universeId];
 
-  const universeTransformationsViewModel = universeTransformations[universeIndex].map((transformation, transformationIndex) => {
-    return {
-      direction: directions[transformationIndex],
-      universe: universeArray[universeTransformations[universeIndex][transformationIndex] -1 ],
-    }
-  });
-
   const universeViewModel = Object.assign({}, { universeId }, { universeDiscourses }, {
     quadripodHtml: prettifyQuadripode(universeId.split('-')),
-    universeTransformations: universeTransformationsViewModel,
   });
 
   const html = Mustache.render(universeTemplate, universeViewModel);
