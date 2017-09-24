@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>24 Discourses : {{ universeId }}</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      td {
+        width: 18px;
+      }
+      td.cell {
+        background-color: ccc;
+      }
+      td.highlight {
+        background-color: f00;
+      }
+      td a {
+        height: 100%;
+        width: 100%;
+        display:block;
+      }
+      ul {
+        padding: 0;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>{{{ quadripodHtml }}}</h1>
+
+    <h-include src="static/{{ universeId }}-map.html"></h-include>
+
+    <ul class="transformations">
+      {{#universeTransformations}}
+        <a href="{{ universe }}.html">{{ direction }}</a>
+      {{/universeTransformations}}
+    </ul>
+
+    {{#universeDiscourses}}
+      <div>
+      <h2>{{ rotation}}: {{{ quadripodHtml }}}</h2>
+      </div>
+    {{/universeDiscourses}}
+
+    <script src="https://cdn.rawgit.com/gustafnk/h-include/c3143ff3/h-include.js"></script>
+  </body>
+</html>
