@@ -49,6 +49,7 @@
       <div>
         <h2>{{ rotation }}</h2>
         {{{ quadripodHtml }}}
+        <h-include src="static/{{ id }}-info.html"></h-include>
       </div>
     {{/universeDiscourses}}
 

@@ -53,7 +53,7 @@ const htmlTerm = t => {
     's': '$',
     's1': 'S<sub>1</sub>',
     's2': 'S<sub>2</sub>',
-    'a': 'a',
+    'a': '<em>a</em>',
   };
 
   return dict[t];
