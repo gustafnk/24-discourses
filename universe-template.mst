@@ -42,14 +42,14 @@
 ></script>
   </head>
   <body>
-    <h-include src="static/{{ universeId }}-map.html"></h-include>
+    <h-include src="static/{{ universeId }}/universe-map.html"></h-include>
     <div class="title">{{{ quadripodHtml }}}</div>
 
     {{#universeDiscourses}}
       <div>
         <h2>{{ rotation }}</h2>
         {{{ quadripodHtml }}}
-        <h-include src="static/{{ id }}-info.html"></h-include>
+        <h-include src="static/{{ universeId }}/{{ id }}-info.html"></h-include>
       </div>
     {{/universeDiscourses}}
 
